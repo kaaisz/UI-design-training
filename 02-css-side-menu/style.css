@@ -1,0 +1,118 @@
+html, body{
+  padding: 0;
+  margin: 0;
+  height: 0;
+}
+
+ul, li{
+  margin:0;
+  padding: 0;
+  list-style: none;
+}
+
+.container{
+  height:100%;
+}
+
+/* 閉じている状態のmenu */
+.menu{
+  background: #8c618d;
+  color:#fff;
+  /* sidemenu表示を絶対位置指定にする */
+  position: absolute;
+  width: 200px;
+  height:100%;
+  width: 45px;
+  /* 要素の幅により途中で折り返してしまうことを避ける */
+  white-space: nowrap;
+  /* あふれた要素は隠す */
+  overflow: hidden;
+  /*
+  TIPS - whitespaceの要素
+              |  改行  | 空白とタブ文字 |	折り返し
+  |   normal  |	詰める |    詰める     |	折り返す
+  |   nowrap  |	詰める |    詰める     |	折り返さない
+  |    pre    |	 残す  |     残す     |折り返さない
+  |  pre-wrap |  残す  |     残す     |折り返す
+  |  pre-line |	 残す  |    詰める     |	折り返す
+  */
+  transition: width .1s ease-in;
+  /*
+  TIPS
+  要素の横幅の変化に対してアニメーションを適用するには、
+    transition: width 0.1s [アニメーションの種類]
+  のように設定します。
+  アニメーションの種類は以下から適切に指定してみましょう。
+    transition: [対象プロパティ] <time> linear; // 一定
+    transition: [対象プロパティ] <time> ease; // 開始と終了を滑らかにする(初期値)
+    transition: [対象プロパティ] <time> ease-in; // ゆっくり開始
+    transition: [対象プロパティ] <time> ease-out; // ゆっくり終了
+    transition: [対象プロパティ] <time> ease-in-out; // 開始と終了がゆっくり
+  */
+  transition-delay: .3s;
+}
+
+/* 閉じている状態のcontents */
+.contents{
+  background: #eee;
+  height: 100%;
+  padding: 20px;
+  margin-left: 200px;
+  /* 下に余白ができてしまうので調整する */
+  box-sizing: border-box;
+  /*
+  tips
+  デフォルトでは要素の幅や高さはpaddingやborderを含まない状態で計算されます。
+  そのためコンテンツの高さは100% + (上下のpadding)となっています。
+  これを変更するには、box-sizingプロパティを利用します。
+  padding込みで高さを100%とするには、値をborder-boxに設定します。
+   */
+  margin-left: 45px;
+}
+
+.brand{
+  height:70px;
+  background-image: url('assets/image/logo.svg');
+  background-size:150px 30px;
+  /* ロゴのrepeatingをbrockする - default: repeat */
+  background-repeat: no-repeat;
+  /* set the position */
+  background-position: left 12px center;
+}
+
+.menu-item .fa{
+  font-size:19px;
+  width:45px;
+  text-align: center;
+}
+
+.menu-item{
+  /* 間隔をあける */
+  line-height:35px;
+  /* アニメーションの設定 */
+  transition:background-color .3s ease-in-out;
+  /*
+  TIPS
+  アニメーションの設定にはtransitionプロパティを利用します。
+  特定のプロパティに対してアニメーションを設定するには次のようにします。
+    transition: background-color [遷移時間] [アニメーションの種類]
+
+  アニメーションの遷移の仕方の設定には、次のようなものがあります。
+    transition: <time> linear; // 一定
+    transition: <time> ease; // 開始と終了を滑らかにする(初期値)
+    transition: <time> ease-in; // ゆっくり開始
+    transition: <time> ease-out; // ゆっくり終了
+    transition: <time> ease-in-out; // 開始と終了がゆっくり
+  */
+  cursor:pointer;
+}
+
+.menu-item:hover{
+  background:#4d294d;
+}
+
+
+/* 開いている状態のMenu */
+.menu:hover{
+  width:200px;
+}

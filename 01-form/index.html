@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Form sample</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    </head>
+    <body>
+        <div id="wrap">
+            <header>
+                <h1>Form practice</h1>
+            </header>
+            <div id="input-test">
+                <!-- <form> -->
+                <form novalidate><!--novalidate is for deactivate validation -->
+                    <label>
+                        <p>Name</p>
+                        <!-- autocomplete invokes your personal information automatically -->
+                        <input type="name" name="name" autocomplete="name" required>
+                    </label>
+                    <label>
+                        <p>Mail Address</p>
+                        <!-- if you don't want to invoke autocomplete temporary, add off to autocomplete -->
+                        <input type="email" name="email1" autocomplete="off" placeholder="placeholder@email.com" required><br />
+                        <input type="email" name="email2" autocomplete="off" readonly value="readonly@email.com">
+                        <!-- disabled code doesn't show output -->
+                        <input type="email" name="email3" autocomplete="off" disabled value="disabled@email.com">
+                    </label>
+                    <label>
+                        <p>Phone number</p>
+                        <input type="tel" name="tel" autocomplete="tel" required>
+                    </label>
+                    <label>
+                        <p>Postal Code</p>
+                        <input type="text" name="postal-code" autocomplete="postal-code" required>
+                    </label>
+                    <label>
+                        <p>URL</p>
+                        <input type="url" name="url">
+                    </label>
+                    <label>
+                        <p>number</p>
+                        <input type="number" name="number">
+                    </label>
+                    <label>
+                        <p>color</p>
+                        <input type="color" name="color">
+                    </label>
+                    <label>
+                        <p>Date</p>
+                        <input type="date" name="date">
+                    </label>
+                    <label>
+                        <p>Time</p>
+                        <input type="time" name="time">
+                    </label>
+                    <label>
+                        <p>Date-time</p>
+                        <input type="datetime-local" name="datetime">
+                    </label>
+                    <label>
+                        <p>required field</p>
+                        <input name="required" required>
+                    </label>
+                    <label>
+                        <p>Checking min-number / max-number<br /><span class="small">(this is setting 10 for max. if you type over 11, alert comes out)</span></p>
+                        <input type="number" name="max-min" min="5" max="10" value="11">
+                    </label>
+                    <!-- 文字数チェック -->
+                    <label>
+                        <p>Checking String Length<br /><span class="small">(over 5 characters until 10 characters)</span></p>
+                        <input name="length" minlength="5" maxlength="10" value="1234">
+                    </label>
+                    <!-- 正規表現 -->
+                    <label>
+                        <p>Checking correction</p>
+                        <input name="regexp" pattern="HTML5" title="Matching HTML5.1 is ok" value="HTML4.1">
+                    </label>
+                    <label>
+                        <p>Checking correction<br /><span class="small">(from the caracter starts A is ok)</span></p>
+                        <input name="regexp" pattern="^a.*" title="from the caracter starts A is ok" value="hello">
+                    </label>
+                    <label>
+                        <p>Checking spell<br /><span class="small">(from the caracter starts A is ok)</span></p>
+                        <!-- put spellcheck="false" to deactivate spellcheck -->
+                        <input name="hello" value="halo" spellcheck="false">
+                    </label>
+                    <div id="btn">
+                        <button type="submit">submit</button>
+                    </div>
+                </form>
+            </div>
+            <div id="output">
+                <p>This is the input you added.</p>
+                <ul class="result"></ul>
+            </div>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="script.js"></script>
+    </body>
+</html>
