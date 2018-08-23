@@ -1,0 +1,74 @@
+@charset "UTF-8";
+
+body{
+  width:100%;
+  height:100%;
+  margin:0;
+  padding:0;
+  font-family: sans-serif;
+  background: #eee;
+}
+#wrap{
+  min-height:60vh;
+  margin:auto;
+  padding-top: 40vh;
+  text-align: center;
+}
+.toggle-switch{
+  margin-bottom:5px;
+}
+
+.border{
+  display: inline-block;/*to place the switch center*/
+  position: relative;/*set switch position to place inside*/
+  background: #2B2D42;
+  width:100px;
+  height:50px;
+  /* display: block; */
+  border-radius:25px; /*heightの半分をradiusに指定して半円にする*/
+  cursor: pointer;
+  text-indent: -9999px;/*move out the text to out of body*/
+}
+
+/* make switch part(small circle) */
+.border::after{
+  position: absolute;
+  top:5px;
+  left:5px;
+  content:"";
+  width: 40px;
+  height: 40px;
+  background: #fff;
+  border-radius:50%;/* make this selector circle */
+  transition-duration: 0.2s;
+  /*transformで設定した効果に対しtransition-durationプロパティを利用することで、
+  アニメーションの時間効果を調整することができる*/
+}
+
+/* make switch part switch to red if checkbox has checked */
+.button:checked + .border{
+  /*checked = if checkbox has checked*/
+  /*you can make style only for next to .border*/
+  background: #D81543;
+}
+
+.button:checked + .border::after{
+  left: calc(100% - 5px);/*place to right side by using left position*/
+  transform:translateX(-100%);/*move left to the width of switch(スイッチの直径分100%を左に移動)*/
+}
+
+.button{/*display the checkbox none*/
+  display: none;
+}
+
+.border:active::after{
+  /* width:60%;/*temporarily expand width to animate slippery*/ */
+}
+
+.toggle-switch.gold .button:checked + .border{/*same as line 40*/
+  background: #f2d300;
+}
+
+.toggle-switch.green .button:checked + .border{/*same as line 40*/
+  background: #00a468;
+}
