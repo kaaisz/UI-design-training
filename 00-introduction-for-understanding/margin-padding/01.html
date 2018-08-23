@@ -82,6 +82,9 @@
 
     <div class="content-wrap">
       <h2>difference between content-box and border-box</h2>
+      <p>Content-box isn't including padding / margin when defining width & height.<br>
+      Though, border-box is including padding / margin when defining them.</p>
+      <p>height:150px; / width:150px;</p>
       <div class="box-wrapper">
         <div class="box box-content">
           <div class="inner">
@@ -100,6 +103,13 @@
 
     <div class="content-wrap">
       <h2>difference between the way of defining padding</h2>
+      <p>from left to right:</p>
+      <ul>
+        <li>20px for each side</li>
+        <li>top,bottom: 20px - right,left: 50px</li>
+        <li>top: 20px - right, left: 50px - bottom:100px</li>
+        <li>top: 20px - right:50px - bottom:100px - left:150px</li>
+      </ul>
       <div class="box-wrapper">
         <div class="box box-pad-1">
           <div class="inner">
@@ -128,6 +138,10 @@
           </div>
         </div>
       </div>
+    </div>
+
+    <div class="content-wrap">
+      <h2>difference between the way of defining margin</h2>
       <p>from left to right:</p>
       <ul>
         <li>20px for each side</li>
@@ -135,10 +149,6 @@
         <li>top: 20px - right, left: 50px - bottom:100px</li>
         <li>top: 20px - right:50px - bottom:100px - left:150px</li>
       </ul>
-    </div>
-
-    <div class="content-wrap">
-      <h2>difference between the way of defining margin</h2>
       <div class="box-wrapper">
         <div class="box box-mg-1">
           <div class="inner">
@@ -167,17 +177,11 @@
           </div>
         </div>
       </div>
-      <p>from left to right:</p>
-      <ul>
-        <li>20px for each side</li>
-        <li>top,bottom: 20px - right,left: 50px</li>
-        <li>top: 20px - right, left: 50px - bottom:100px</li>
-        <li>top: 20px - right:50px - bottom:100px - left:150px</li>
-      </ul>
     </div>
 
     <div class="content-wrap">
       <h2>Make the element center by using margin</h2>
+      <p>using auto to margin (margin:20px auto;)</p>
       <div class="box-wrapper auto">
         <div class="box box-mg-auto-1">
           <div class="inner">
@@ -193,6 +197,7 @@
           <li><a href="01.html">Understanding Margin / Padding - essential</a></li>
           <li><a href="02.html">Understanding Offset margin</a></li>
           <li><a href="03.html">Understanding Negative Margin</a></li>
+          <li><a href="04.html">Advanced training for learning negative margin</a></li>
         </ul>
       </div>
     </footer>

@@ -3,28 +3,13 @@
   <head>
     <meta charset="utf-8">
     <title>Understanding Margin / Padding</title>
-    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" />
     <style>
-      body{
-        margin:0;
-        padding:0;
-        background:#fef58b;
-      }
-      ul, li{
-        margin:0;
-        padding:0;
-        list-style: none;
-      }
       .container{
         width:620px;
         margin: 0 auto;
         padding: 20px 20px 0;
         background-color: #fed28f;
-      }
-      .list{
-        overflow: hidden;
-        /* set 4 image for each line - .itemで指定したマージンと同じ右マージンをネガティブで設定*/
-        margin-right: -20px;
       }
       .item{
         float: left;
@@ -37,21 +22,68 @@
         background-size: cover;
         background-position: center;
       }
+      .list{
+        padding: 0;
+        list-style: none;
+        overflow: hidden;
+        /* set 4 image for each line - .itemで指定したマージンと同じ右マージンをネガティブで設定*/
+        margin-right: -20px;
+      }
+      footer{
+        padding: 2rem;
+        background: #444;
+      }
+      .footer__content__heading{
+        color:#fff;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .footer__content__list{
+        padding: 0 0 0 1rem;
+        list-style: none;
+      }
+      .footer__content__list a{
+        color:white;
+        text-decoration: none;
+        line-height: 2;
+        -webkit-transition: all .3s ease;
+        -moz-transition: all .3s ease;
+        -ms-transition: all .3s ease;
+        -o-transition: all .3s ease;
+        transition: all .3s ease;
+      }
+      .footer__content__list a:hover{
+        color:#aaa;
+      }
     </style>
   </head>
   <body>
     <h1>Understanding margin & padding</h1>
-    <div class="container">
-      <ul class="list">
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-        <li class="item"></li>
-      </ul>
+    <div class="content-wrap">
+      <div class="container">
+        <ul class="list">
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+          <li class="item"></li>
+        </ul>
+      </div>
     </div>
+    <footer>
+      <div class="footer__content">
+        <p class="footer__content__heading">Practice list</p>
+        <ul class="footer__content__list">
+          <li><a href="01.html">Understanding Margin / Padding - essential</a></li>
+          <li><a href="02.html">Understanding Offset margin</a></li>
+          <li><a href="03.html">Understanding Negative Margin</a></li>
+          <li><a href="04.html">Advanced training for learning negative margin</a></li>
+        </ul>
+      </div>
+    </footer>
   </body>
 </html>
