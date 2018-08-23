@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Understanding Margin / Padding</title>
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <style>
+      body{
+        margin:0;
+        padding:0;
+        background:#fef58b;
+      }
+      ul, li{
+        margin:0;
+        padding:0;
+        list-style: none;
+      }
+      .container{
+        width:620px;
+        margin: 0 auto;
+        padding: 20px 20px 0;
+        background-color: #fed28f;
+      }
+      .list{
+        overflow: hidden;
+        /* set 4 image for each line - .itemで指定したマージンと同じ右マージンをネガティブで設定*/
+        margin-right: -20px;
+      }
+      .item{
+        float: left;
+        width: 150px;
+        height:150px;
+        margin-right: 20px;
+        margin-bottom: 20px;
+        background-image: url('szdplogo.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Understanding margin & padding</h1>
+    <div class="container">
+      <ul class="list">
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+        <li class="item"></li>
+      </ul>
+    </div>
+  </body>
+</html>

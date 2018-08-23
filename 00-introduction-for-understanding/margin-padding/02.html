@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Understanding Margin / Padding</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .box{
+        margin:50px;
+      }
+      .parent{
+        margin: 50px;
+      }
+      .child{
+        margin:100px;
+        /*子要素のmarginが親よりも大きい場合、子要素のmarginは親要素の外側にはみ出す = 親のmarginが相殺される*/
+      }
+      .parent-2{
+        margin: 50px;
+        border:1px solid #777;
+        /*隣り合う要素の間にborderがある場合、borderが上下の要素の境界となるため相殺が発生しない*/
+        /*また、paddingが設定されている場合、heightやmin-heightが設定されている場合も相殺は発生しない*/
+      }
+      .child-2{
+        margin:100px;
+      }
+      .parent-3{
+        margin:50px;
+      }
+      .child-3{
+        margin:100px;
+      }
+
+
+    </style>
+  </head>
+  <body>
+    <h1>Understanding margin & padding</h1>
+
+    <div class="content-wrap">
+      <h2>Understanding Offset margin</h2>
+      <div class="box offset">Box</div>
+      <div class="box offset">Box</div>
+      <div class="line-container">
+        <div class="line h h50"></div>
+        <div class="line h h100"></div>
+        <div class="line h h150"></div>
+        <div class="line h h200"></div>
+        <div class="line h h250"></div>
+        <div class="line h h300"></div>
+        <div class="line h h350"></div>
+        <div class="line h h400"></div>
+        <div class="line h h450"></div>
+      </div>
+    </div>
+    <div class="content-wrap">
+      <h2>Understanding Offset margin of parent and child</h2>
+      <div class="parent">
+        <div class="child">.child</div>
+      </div>
+
+      <div class="parent-2">
+        <div class="child-2">.child</div>
+      </div>
+
+      <div class="parent-3">
+        Hello
+        <div class="child-3">.child</div>
+        Hello<!-- if you erased this side, margin bottom will disappered -->
+      </div>
+
+    </div>
+  </body>
+</html>
