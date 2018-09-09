@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body{
+            font-family: Arial, Helvetica, sans-serif;
             width:100vw;
             height:100vh;
             margin:0;
@@ -24,17 +25,28 @@
             transition:.3s;
             color:#fff;
         }
+        .bell:hover{
+            color:#ef476f;
+        }
         .badge{
             position: absolute;
             font-size:18px;
             top:-5px;
-            left:38px;
+            right:-15px;
             background: #ef476f;
-            padding:0 8px;
+            color:#fff;
+            padding:0 10px;
             height:30px;
             border-radius:15px;/*half of height*/
             line-height: 30px;
             white-space: nowrap/*to avoid overflowing*/
+        }
+
+        .notifier.green .badge{
+            background: #06D6A0;
+        }
+        .notifier.green .bell:hover{
+            color:#06D6A0;
         }
     </style>
 </head>
@@ -42,6 +54,11 @@
     <div class="notifier">
         <i class="bell fa fa-bell-o"></i><!--icon-->
         <div class="badge">999</div><!-- notification badge -->
+    </div>
+    <div class="notifier green">
+        <i class="bell fa fa-envelope-o"></i>
+        <!--icon-->
+        <div class="badge">5</div><!-- notification badge -->
     </div>
 </body>
 </html>
