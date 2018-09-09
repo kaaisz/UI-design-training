@@ -1,0 +1,136 @@
+@charset "UTF-8";
+body{
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+
+
+/* common */
+.button{
+  color:#fff;
+  background: #2c366d;
+  border:2px solid #2c366d;
+  padding:0 40px;
+  line-height: 40px;
+  font-size: 21px;
+  margin:10px;
+  outline:0;/*erase the blue outline what comes out when you clicked*/
+  position:relative;
+  z-index:1;/*arrange to front*/
+}
+/* for animation */
+.button{
+  transition: all .3s;
+}
+.button, .button::before, .button::after{
+  transition:all .3s;
+}
+
+
+
+/* for No1 */
+.button.type1:hover{
+  background: #46bde6;
+  border-color: #46bde6;
+}
+
+
+
+/* for No2 */
+.button.type2:hover{
+  color: #46bde6;
+  background: #fff;
+  border-color: #46bde6;
+}
+
+
+
+/* for No3 */
+.button::before, .button::after{
+  content:"";
+  display:block;
+  position: absolute;
+  z-index:-1;/*arrange to back*/
+}
+.button.type3::before,
+.button.type3::after{
+  top:0;
+  /* specify positions for animation */
+  width:50%;
+  height:100%;
+  background:#2c366d;
+}
+.button.type3::before{
+  left:0;
+}
+.button.type3::after{
+  right:0;
+}
+.button.type3:hover{
+  color:#46bed6;
+  background:#fff;
+  border-color:#46bed6;
+}
+/* button3に対してhover時のanimation用layor(擬似要素 - pseudo element)を設定する */
+/* set the layor(pseudo-element) for hover animation to button3 */
+.button:hover.type3::before,
+.button:hover.type3::after{
+  width:0;
+}
+
+
+
+/* for No4 */
+.button.type4::before,
+.button.type4::after{
+  width:100%;
+  height:50%;
+  left:0;
+  background: #2c366d;
+}
+/* adjust position for animation layor */
+.button.type4::before{
+  top:0;
+}
+.button.type4::after{
+  bottom:0;
+}
+/* setting background color */
+.button.type4:hover{
+  color:#46bed6;
+  background:#fff;
+  border-color:#46BEd6;
+}
+/* setting hover animation - background color will slghtly disappeared vertically */
+.button:hover.type4::before,
+.button:hover.type4::after{
+  height:0;
+}
+
+
+
+/* for No5 */
+.button.type5{
+  color:#46bed6;
+  background:#fff;
+  border-color:#46bed6;
+}
+/* set the position for animation layor */
+.button.type5::after{
+  top:0;
+  left:0;
+  /* set size for animation layor */
+  width:100%;
+  height:100%;
+  transform:scale(0.5);
+  /*中心から変化するようなアニメーションを設定する場合、大きさを変化させつつ中心位置を保つのは困難のため、
+  横幅と高さを変化させるのではなく、scale()を利用して縮尺の度合いを変化させる
+  横幅と高さは100%に設定し、transformプロパティの値にscale()を利用して、縮尺を0.5とする*/
+}
+/* set the hover color */
+.button.type5:hover{
+  color:#fff;
+  border-color:#2c366d;
+}
