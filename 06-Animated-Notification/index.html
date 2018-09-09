@@ -8,15 +8,33 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
         body{
+            width:100vw;
+            height:100vh;
+            margin:0;
             background: #444;
         }
         .notifier{
-            display: inline-block;
+            top:40vh;
+            width:70px;
+            margin:auto;
+            position: relative;
         }
         .bell{
-            font-size: 50px;
+            font-size: 70px;
             transition:.3s;
             color:#fff;
+        }
+        .badge{
+            position: absolute;
+            font-size:18px;
+            top:-5px;
+            left:38px;
+            background: #ef476f;
+            padding:0 8px;
+            height:30px;
+            border-radius:15px;/*half of height*/
+            line-height: 30px;
+            white-space: nowrap/*to avoid overflowing*/
         }
     </style>
 </head>
