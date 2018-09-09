@@ -15,9 +15,9 @@
             background: #444;
         }
         .notifier{
-            top:40vh;
+            top:35vh;
             width:70px;
-            margin:auto;
+            margin:20px auto;
             position: relative;
         }
         .bell{
@@ -48,10 +48,32 @@
         .notifier.green .bell:hover{
             color:#06D6A0;
         }
+        /* animation */
+        .notifier.new .badge{
+            animation: pulse 2s;
+            animation-iteration-count: infinite;
+        }
+        @keyframes pulse{
+            40%{
+                transform:scale3d(1, 1, 1);/*nomal value*/
+            }
+            50%{
+                transform:scale3d(1.3, 1.3, 1.3);/*1.3 times for each direction of X, Y, Z*/
+            }
+            55%{
+                transform:scale3d(1, 1, 1);
+            }
+            60%{
+                transform:scale3d(1.3, 1.3, 1.3);
+            }
+            65%{
+                transform:scale3d(1, 1, 1);
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="notifier">
+    <div class="notifier new">
         <i class="bell fa fa-bell-o"></i><!--icon-->
         <div class="badge">999</div><!-- notification badge -->
     </div>
