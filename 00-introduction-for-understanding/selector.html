@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Understanding Margin / Padding</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+        .code__body{
+            background: #444;
+            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            margin:1rem 0;
+            padding: 1rem;
+            color:#fff;
+            line-height: 1.5;
+        }
+        .output__body{
+            background: #eee;
+            font-family: Menlo, Monaco, Consolas, 'Courier New', monospace;
+            font-size: 14px;
+            margin:1rem 0;
+            padding: 1rem;
+        }
+
+    </style>
+</head>
+
+<body>
+    <h1>Understanding Selector</h1>
+    <main>
+        <div class="content-wrap">
+            <h2>Child Selector</h2>
+            <p>Matches an element that is a direct child of another</p>
+            <p>div > p { } Targets any < a > elements that are children of an < li > element (but not other < a > elements in the page)</p>
+            <div class="code"></div>
+                <p data-height="400" data-theme-id="0" data-slug-hash="RYJEzy" data-default-tab="html,result" data-user="suzydp" data-pen-title="<for understanding> Child selector"
+                    class="codepen">See the Pen <a href="https://codepen.io/suzydp/pen/RYJEzy/">&lt;for understanding&rt; Child selector</a>
+                    by suzydp (<a href="https://codepen.io/suzydp">@suzydp</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+
+        <div class="content-wrap">
+            <h2>Descendant Selector</h2>
+            <p>Matches an element that is a descendent of another specified element (not just a direct child of that element)</p>
+            <p>div p {} Targets any < a > elements that sit inside a
+                < p > element, even if there are other elements nested between them</p>
+            <div class="code">
+                <p data-height="400" data-theme-id="0" data-slug-hash="zJaexo" data-default-tab="html,result" data-user="suzydp" data-pen-title="zJaexo"
+                    class="codepen">See the Pen <a href="https://codepen.io/suzydp/pen/zJaexo/">zJaexo</a> by suzydp (<a href="https://codepen.io/suzydp">@suzydp</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</p>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+
+        <div class="content-wrap">
+            <h2>Adjacent Selector</h2>
+            <p>from left to right:</p>
+            <div class="code">
+                <p data-height="400" data-theme-id="0" data-slug-hash="jvKdWO" data-default-tab="html,result" data-user="suzydp" data-pen-title="jvKdWO"
+                    class="codepen">See the Pen <a href="https://codepen.io/suzydp/pen/jvKdWO/">jvKdWO</a> by suzydp (<a href="https://codepen.io/suzydp">@suzydp</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</p>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+
+        <div class="content-wrap">
+            <h2>General Sibling Selector</h2>
+            <p>Matches an element that is a sibling of another, 
+                although it does not have to be the directly preceding element</p>
+            <p>div~p {} If you had two
+            < p > elements that are siblings of an
+                < h1 > element, this rule would apply to both
+            </p>
+            <div class="code">
+                <p data-height="400" data-theme-id="0" data-slug-hash="zJaeqN" data-default-tab="html,result" data-user="suzydp" data-pen-title="zJaeqN"
+                    class="codepen">See the Pen <a href="https://codepen.io/suzydp/pen/zJaeqN/">zJaeqN</a> by suzydp (<a href="https://codepen.io/suzydp">@suzydp</a>)
+                    on <a href="https://codepen.io">CodePen</a>.</p>
+                <script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer__content">
+            <p class="footer__content__heading">Practice list</p>
+            <ul class="footer__content__list">
+                <li class="footer__content__list__heading">Margin / Padding</li>
+                    <ul>
+                        <li><a href="01.html">Understanding Margin / Padding - essential</a></li>
+                        <li><a href="02.html">Understanding Offset margin</a></li>
+                        <li><a href="03.html">Understanding Negative Margin</a></li>
+                        <li><a href="04.html">Advanced training for learning negative margin</a></li>
+                    </ul>
+                <li class="footer__content__list__heading"><a href="selector.html">Selector</a></li>
+            </ul>
+        </div>
+    </footer>
+</body>
+
+</html>

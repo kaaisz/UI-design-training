@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Understanding Margin / Padding</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <style>
       .box-content{
         background-color: #FDADB6;
@@ -79,125 +79,130 @@
   </head>
   <body>
     <h1>Understanding margin & padding</h1>
+    <main>
+      <div class="content-wrap">
+        <h2>difference between content-box and border-box</h2>
+        <p>Content-box isn't including padding / margin when defining width & height.<br>
+        Though, border-box is including padding / margin when defining them.</p>
+        <p>height:150px; / width:150px;</p>
+        <div class="box-wrapper">
+          <div class="box box-content">
+            <div class="inner">
+              Content Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-border">
+            <div class="inner">
+              Border Box
+            </div>
+          </div>
+        </div>
+      </div>
 
-    <div class="content-wrap">
-      <h2>difference between content-box and border-box</h2>
-      <p>Content-box isn't including padding / margin when defining width & height.<br>
-      Though, border-box is including padding / margin when defining them.</p>
-      <p>height:150px; / width:150px;</p>
-      <div class="box-wrapper">
-        <div class="box box-content">
-          <div class="inner">
-            Content Box
+      <div class="content-wrap">
+        <h2>difference between the way of defining padding</h2>
+        <p>from left to right:</p>
+        <ul>
+          <li>20px for each side</li>
+          <li>top,bottom: 20px - right,left: 50px</li>
+          <li>top: 20px - right, left: 50px - bottom:100px</li>
+          <li>top: 20px - right:50px - bottom:100px - left:150px</li>
+        </ul>
+        <div class="box-wrapper">
+          <div class="box box-pad-1">
+            <div class="inner">
+              Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-pad-2">
+            <div class="inner">
+              Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-pad-3">
+            <div class="inner">
+              Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-pad-4">
+            <div class="inner">
+              Box
+            </div>
           </div>
         </div>
       </div>
-      <div class="box-wrapper">
-        <div class="box box-border">
-          <div class="inner">
-            Border Box
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="content-wrap">
-      <h2>difference between the way of defining padding</h2>
-      <p>from left to right:</p>
-      <ul>
-        <li>20px for each side</li>
-        <li>top,bottom: 20px - right,left: 50px</li>
-        <li>top: 20px - right, left: 50px - bottom:100px</li>
-        <li>top: 20px - right:50px - bottom:100px - left:150px</li>
-      </ul>
-      <div class="box-wrapper">
-        <div class="box box-pad-1">
-          <div class="inner">
-            Box
+      <div class="content-wrap">
+        <h2>difference between the way of defining margin</h2>
+        <p>from left to right:</p>
+        <ul>
+          <li>20px for each side</li>
+          <li>top,bottom: 20px - right,left: 50px</li>
+          <li>top: 20px - right, left: 50px - bottom:100px</li>
+          <li>top: 20px - right:50px - bottom:100px - left:150px</li>
+        </ul>
+        <div class="box-wrapper">
+          <div class="box box-mg-1">
+            <div class="inner">
+              Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-mg-2">
+            <div class="inner">
+              Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-mg-3">
+            <div class="inner">
+              Box
+            </div>
+          </div>
+        </div>
+        <div class="box-wrapper">
+          <div class="box box-mg-4">
+            <div class="inner">
+              Box
+            </div>
           </div>
         </div>
       </div>
-      <div class="box-wrapper">
-        <div class="box box-pad-2">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-      <div class="box-wrapper">
-        <div class="box box-pad-3">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-      <div class="box-wrapper">
-        <div class="box box-pad-4">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-    </div>
 
-    <div class="content-wrap">
-      <h2>difference between the way of defining margin</h2>
-      <p>from left to right:</p>
-      <ul>
-        <li>20px for each side</li>
-        <li>top,bottom: 20px - right,left: 50px</li>
-        <li>top: 20px - right, left: 50px - bottom:100px</li>
-        <li>top: 20px - right:50px - bottom:100px - left:150px</li>
-      </ul>
-      <div class="box-wrapper">
-        <div class="box box-mg-1">
-          <div class="inner">
-            Box
+      <div class="content-wrap">
+        <h2>Make the element center by using margin</h2>
+        <p>using auto to margin (margin:20px auto;)</p>
+        <div class="box-wrapper auto">
+          <div class="box box-mg-auto-1">
+            <div class="inner">
+              Box
+            </div>
           </div>
         </div>
       </div>
-      <div class="box-wrapper">
-        <div class="box box-mg-2">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-      <div class="box-wrapper">
-        <div class="box box-mg-3">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-      <div class="box-wrapper">
-        <div class="box box-mg-4">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="content-wrap">
-      <h2>Make the element center by using margin</h2>
-      <p>using auto to margin (margin:20px auto;)</p>
-      <div class="box-wrapper auto">
-        <div class="box box-mg-auto-1">
-          <div class="inner">
-            Box
-          </div>
-        </div>
-      </div>
-    </div>
+    </main>
     <footer>
       <div class="footer__content">
         <p class="footer__content__heading">Practice list</p>
         <ul class="footer__content__list">
-          <li><a href="01.html">Understanding Margin / Padding - essential</a></li>
-          <li><a href="02.html">Understanding Offset margin</a></li>
-          <li><a href="03.html">Understanding Negative Margin</a></li>
-          <li><a href="04.html">Advanced training for learning negative margin</a></li>
+          <li class="footer__content__list__heading">Margin / Padding</li>
+          <ul>
+            <li><a href="01.html">Understanding Margin / Padding - essential</a></li>
+            <li><a href="02.html">Understanding Offset margin</a></li>
+            <li><a href="03.html">Understanding Negative Margin</a></li>
+            <li><a href="04.html">Advanced training for learning negative margin</a></li>
+          </ul>
+          <li class="footer__content__list__heading"><a href="selector.html">Selector</a></li>
         </ul>
       </div>
     </footer>

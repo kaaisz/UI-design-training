@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Understanding Margin / Padding</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../style.css" />
     <style>
       .box{
         margin:50px;
@@ -36,11 +36,7 @@
   </head>
   <body>
     <h1>Understanding margin & padding</h1>
-
-    <div class="content-wrap">
-      <h2>Understanding Offset margin</h2>
-      <div class="box offset">Box</div>
-      <div class="box offset">Box</div>
+    <main>
       <div class="line-container">
         <div class="line h h50"></div>
         <div class="line h h100"></div>
@@ -52,23 +48,28 @@
         <div class="line h h400"></div>
         <div class="line h h450"></div>
       </div>
-    </div>
-    <div class="content-wrap">
-      <h2>Understanding Offset margin of parent and child</h2>
-      <div class="parent">
-        <div class="child">.child</div>
+      <div class="content-wrap">
+        <h2>Understanding Offset margin</h2>
+        <div class="box offset">Box</div>
+        <div class="box offset">Box</div>
       </div>
+      <div class="content-wrap">
+        <h2>Understanding Offset margin of parent and child</h2>
+        <div class="parent">
+          <div class="child">.child</div>
+        </div>
 
-      <div class="parent-2">
-        <div class="child-2">.child</div>
-      </div>
+        <div class="parent-2">
+          <div class="child-2">.child</div>
+        </div>
 
-      <div class="parent-3">
-        Hello
-        <div class="child-3">.child</div>
-        Hello<!-- if you erased this side, margin bottom will disappered -->
+        <div class="parent-3">
+          Hello
+          <div class="child-3">.child</div>
+          Hello<!-- if you erased this side, margin bottom will disappered -->
+        </div>
       </div>
-    </div>
+    </main>
     <footer>
       <div class="footer__content">
         <p class="footer__content__heading">Practice list</p>
