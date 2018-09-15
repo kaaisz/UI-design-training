@@ -37,4 +37,9 @@ body{
     left:-25px;
     border-left:25px solid transparent;/*add transparent to not display color*/
     border-top:25px solid #003459;/*add color to display color*/
+    border-bottom:25px solid #003459;/*add color to display color*/
+}
+
+.step:first-child::before{/*specify only ::before of first child element*/
+    display: none;/*to do not display arrow only on first breadcrumb*/
 }
