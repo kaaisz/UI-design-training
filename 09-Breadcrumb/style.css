@@ -57,3 +57,17 @@ body{
 .step:last-child::after{
     display: none;
 }
+
+.step:hover{
+    background: #007ea7;
+}
+
+.step:hover::before{
+    /* specify only the color */
+    border-top-color:#007ea7;
+    border-bottom-color:#007ea7;
+}
+
+.step:hover::after{
+    border-left-color:#007ea7;
+}
