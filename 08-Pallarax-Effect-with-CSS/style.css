@@ -14,7 +14,7 @@ p, div{
 h3, .caption{
     font-family: 'Lato', 'Arial', 'Helvetica', sans-serif;
     letter-spacing: 5px;
-    text-align: center;
+    margin-bottom:20px;
 }
 .caption{
     color:white;
@@ -22,6 +22,8 @@ h3, .caption{
     left:0;
     top:50%;/*not set vh to vertically center*/
     right:0;
+    text-align: center;
+    font-size: 30px;
 }
 p{
     font-family: 'Courier New', Courier, monospace;
@@ -37,7 +39,7 @@ p{
 }
 .background1__img{
     background-image: url('img/img1.jpg');
-    min-height:100%;
+    min-height:100vh;
 }
 .background2__img{
     background-image: url('img/img2.jpg');
@@ -47,5 +49,23 @@ p{
     background-image: url('img/img3.jpg');
     min-height:400px;/*set a specific height to set a parallax properly*/
 }
-
+.content__wrap{
+    padding: 80px;
+    position: relative;
+}
+.content1, .content3{
+    background: white;
+    color:#222;
+}
+.content2{
+    background: #222;
+    color:white;
+}
+.content__heading{
+    text-align: center;
+}
+.content__description{
+    text-align: justify;
+    line-height: 1.5;
+}
 
