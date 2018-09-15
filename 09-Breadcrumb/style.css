@@ -26,6 +26,7 @@ body{
     margin-right:30px;
     padding:0 20px;
     transition:.3s ease-in-out;
+    white-space: nowrap;/*to stop wrap up text in case of white space in element*/
 }
 
 .step > a{/*specify only each child element*/
