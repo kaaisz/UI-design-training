@@ -51,4 +51,9 @@ body{
     right:-25px;
     border-left:25px solid #003459;
     border-top:25px solid transparent;
+    border-bottom:25px solid transparent;
+}
+
+.step:last-child::after{
+    display: none;
 }
