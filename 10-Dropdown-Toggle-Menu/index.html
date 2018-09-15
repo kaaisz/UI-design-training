@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Dropdown Menu</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+</head>
+<body>
+    <div class="content__wrap">
+        <h1 class="content__heading"></h1>
+        <ul class="content__menu">
+            <li>
+                <!--To activate checkbox even this id elements has been clicked-->
+                <label for="menu1"></label>
+                <!--id must equal to the name you added on 'label for' -->
+                <input type="checkbox" id="menu1">Menu A
+                <ul class="submenu">
+                    <li><p>submenu</p></li>
+                    <li><p>submenu</p></li>
+                </ul>
+            </li>
+            <li>
+                <label for="menu2"></label>
+                <input type="checkbox" id="menu2">Menu B
+                <ul class="submenu">
+                    <li><p>submenu</p></li>
+                    <li><p>submenu</p></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
