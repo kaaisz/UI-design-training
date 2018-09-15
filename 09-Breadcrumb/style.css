@@ -43,3 +43,12 @@ body{
 .step:first-child::before{/*specify only ::before of first child element*/
     display: none;/*to do not display arrow only on first breadcrumb*/
 }
+
+.step::after{
+    content:'';
+    position: absolute;
+    top:0;
+    right:-25px;
+    border-left:25px solid #003459;
+    border-top:25px solid transparent;
+}
