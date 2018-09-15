@@ -1,4 +1,8 @@
 @charset 'UTF-8';
+*{
+    list-style: none;
+}
+
 body{
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
@@ -41,4 +45,35 @@ h1{
     width:100%;
     height:30px;
     cursor:pointer;
+}
+
+.content__submenu{
+    display:none;/*hidden until click it*/
+    list-style-type:none;
+    padding-left:0;
+}
+
+/* it opens when checkbox has been clicked */
+.content__menu > li > input:checked ~ .content__submenu{
+    display:block;
+}
+
+.content__submenu > li{
+    background:#efe;
+    border-top:1px solid #696;
+    cursor:pointer;
+}
+
+.content__submenu > li > p{
+    margin:0;
+    padding-left:25px;
+}
+
+input[type="checkbox"]{
+    display: none;
+}
+
+.content__menu__heading{
+    padding-left: 12px;
+    margin:0;
 }
