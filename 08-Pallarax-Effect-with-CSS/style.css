@@ -1,1 +1,51 @@
 @charset 'UTF-8';
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+}
+body{
+    height:100%;
+    margin:0;
+}
+p, div{
+    user-select: text
+}
+h3, .caption{
+    font-family: 'Lato', 'Arial', 'Helvetica', sans-serif;
+    letter-spacing: 5px;
+    text-align: center;
+}
+.caption{
+    color:white;
+    position:absolute;
+    left:0;
+    top:50%;/*not set vh to vertically center*/
+    right:0;
+}
+p{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: -0.5px;
+}
+.background{
+    position: relative;
+    /*to create the actual parallax effect*/
+    background-attachment: fixed;
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;  
+}
+.background1__img{
+    background-image: url('img/img1.jpg');
+    min-height:100%;
+}
+.background2__img{
+    background-image: url('img/img2.jpg');
+    min-height:400px;/*set a specific height to set a parallax properly*/
+}
+.background3__img{
+    background-image: url('img/img3.jpg');
+    min-height:400px;/*set a specific height to set a parallax properly*/
+}
+
+
