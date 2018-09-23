@@ -14,7 +14,7 @@ label{
     left:0;
     top:0;
     width:100%;
-    height:30px;
+    height:50px;
     cursor:pointer;
 }
 
@@ -24,7 +24,7 @@ input[type="checkbox"]{
 
 h1{
     font-size:20px;
-    line-height: 30px;
+    line-height: 50px;
     padding:5px;
     text-align: center;
 }
@@ -48,39 +48,26 @@ h1{
 .content__menu > li{
     background: #9B9;
     border-bottom:1px solid #393;
-    padding:10px 12px;
+    padding:0 12px;
     font-size:13px;
-    line-height: 30px;
+    line-height: 50px;
     position: relative;
 }
 
-.content__menu > li:first-child{
-    border-top:1px solid #393;
+.content__menu li:hover{
+    opacity:.9;
 }
 
-.content__submenu{
-    display:none;/*hidden until click it*/
-    list-style-type:none;
-    padding-left:0;
+.content__menu li ul li{
+    height:0;
+    overflow: hidden;
+    transition:all .2s ease;
 }
 
 /* it opens when checkbox has been clicked */
-.content__menu > li > input:checked ~ .content__submenu{
+.content__menu > li > input:checked ~ .content__submenu li{
     display:block;
+    height:50px;
+    line-height:50px;
 }
 
-.content__submenu > li{
-    background:#efe;
-    border-top:1px solid #696;
-    cursor:pointer;
-}
-
-.content__submenu > li > p{
-    margin:0;
-    padding-left:25px;
-}
-
-.content__menu__heading{
-    padding-left: 12px;
-    margin:0;
-}
