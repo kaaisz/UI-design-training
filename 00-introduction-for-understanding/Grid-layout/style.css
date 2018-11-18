@@ -1,0 +1,278 @@
+@charset 'UTF-8';
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight:500;
+  color:white;
+  padding:0;
+  margin:0;
+}
+
+h2,h3,p,ul,li{
+  color:black;
+}
+
+main{
+  margin:4rem;
+}
+
+.grid-container{
+  background:#eee;
+  /* each items should be surrounded by display:grid */
+  display: grid;
+}
+
+.grA{
+  /* grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px */
+  /* same with above */
+  /* grid-template: 100px 100px 100px(rows) / 100px 100px 100px;(cols) */
+  grid-template: repeat(3, 100px) / repeat(3, 100px);
+}
+
+.grB{
+  grid-template: repeat(auto-fill, 100px) / repeat(auto-fill, 100px);
+}
+
+.grC{
+  grid-template: 100px 100px 100px / 50% 100px 100px;
+}
+
+.grD{
+  grid-template: 100px 100px 100px / 100px 1fr 2fr;
+}
+
+.grE{
+  grid-template: 100px 100px 100px / 100px 1fr 2fr;
+  grid-gap:20px 20px;/*row gap - column gap*/
+  /* 列ごとに指定することになるので、それぞれの余白に違う値を設定したい場合はmarginやpaddingでの調整が必要 */
+}
+
+/* you can expand specific cells for row or column */
+.grA.free .item-a{
+  /* grid-row-start:3;*/
+  /* grid-row-end:4; */
+  /* same with above (start / end) */
+  /* grid-row:3 / 4; */
+  /* grid-column:2 / span 2; */
+  /* also you can use grid-column: 2 / span 2 */
+  /* also you can be shorten like this below (row-start / column-start / row-end / column-end) */
+  grid-area: 3 / 2 / 4 / 4;
+  z-index:1;
+}
+
+.grA.free .item-d{
+  grid-row:1 / 4;
+  grid-column: -1 / -2;
+}
+
+
+
+
+/* area */
+
+/* グリッドをいくつかまとめてエリアとして登録して配置 */
+.grA.area{
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-areas: "header header header" /* apply area name for each grids */
+                       "main   main   sidebar" 
+                       "footer footer footer";
+}
+
+.grA.area.dot{
+  grid-template-rows: 100px 100px 100px;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-areas: "header header header" /* apply area name for each grids */
+                       "main   .      sidebar" /* CSS will be not apply if you put . instead of names */
+                       "footer footer footer";
+}
+
+.grA.area.shorten{
+  /* same expression with .grA.area.dot */
+  grid-template: "header header header" 100px /* name and width of each rows */
+                 "main   .      sidebar" 100px
+                 "footer footer footer" 100px
+                  / 100px 100px 100px; /*width of each cols*/
+}
+
+.grA.area .item-a{
+  grid-area:header;
+}
+
+.grA.area .item-b{
+  grid-area:main;
+}
+
+.grA.area .item-c{
+  grid-area:sidebar;
+}
+
+.grA.area .item-d{
+  grid-area:footer;
+}
+
+
+
+
+
+/* size */
+
+.grA.size{
+  /* 空いてしまっている要素の隙間を詰める */
+  grid-auto-flow:dense;
+}
+
+.grA.size.col{
+  /* 空いてしまっている要素の隙間を詰める */
+  grid-auto-flow:dense column;
+  /* denseで要素からはみ出してしまい、いい具合に処理したい場合の処理 */
+  grid-auto-rows:100px;
+  grid-auto-columns: 100px; 
+}
+
+.grA.size .item-a{
+  background:hsl(300, 80%, 30%);
+}
+
+.grA.size .item-b{
+  background:hsl(300, 80%, 40%);
+  grid-row:span 2;
+  grid-column:span 1;
+}
+
+.grA.size .item-c{
+  background:hsl(300, 80%, 50%);
+  grid-row:span 1;/* way of thinking is same with rowspan */
+  grid-column:span 2;/* way of thinking is same with colspan */
+}
+
+.grA.size .item-d{
+  background:hsl(200, 80%, 30%);
+}
+
+.grA.size .item-e{
+  background:hsl(200, 80%, 40%);
+}
+
+.grA.size .item-f{
+  background:hsl(200, 80%, 50%);
+}
+
+.grA.size .item-g{
+  background:hsl(100, 80%, 30%);
+}
+
+.grA.size .item-h{
+  background:hsl(100, 80%, 40%);
+}
+
+.grA.size .item-i{
+  background:hsl(100, 80%, 50%);
+}
+
+
+
+
+/* align */
+
+.grA.align{
+  height:400px;
+  justify-content:center; /*align-horizontal*/
+  align-content:end; /* align-vertical */
+}
+
+.grA.align-cell{
+  justify-items:end; /*align-horizontal*/
+  align-items:center; /* align-vertical */
+}
+
+.grA.align-cell .item-a{
+  justify-self: center;
+  align-self: center;
+}
+
+
+
+
+/* responsive layout */
+
+.grA.res{/*for mobile view*/
+  grid-template: "header" 100px /* name and width of each rows */
+                 "main" 100px
+                 "sidebar" 100px
+                 "footer" 100px
+                  / 100%; /*width of each cols*/
+}
+
+.grA.res .item-a{
+  background:hsl(300, 80%, 30%);
+  grid-area:header;
+}
+
+.grA.res .item-b{
+  background:hsl(300, 80%, 40%);
+  grid-area:main;
+}
+
+.grA.res .item-c{
+  background:hsl(300, 80%, 50%);
+  grid-area:sidebar;
+}
+
+.grA.res .item-d{
+  background:hsl(200, 80%, 30%);
+  grid-area:footer;
+}
+
+@media screen and (min-width:570px){
+  .grA.res{
+  grid-template: "header header " 100px /* name and width of each rows */
+                 "main sidebar" 100px
+                 "footer footer" 100px
+                  / 1fr 200px ; /*サイドバーを基準に余った場所は可変にする*/
+  }
+}
+
+
+
+
+/* common */
+
+
+.item-a{
+  background:hsl(300, 80%, 30%);
+}
+
+.item-b{
+  background:hsl(300, 80%, 40%);
+}
+
+.item-c{
+  background:hsl(300, 80%, 50%);
+}
+
+.item-d{
+  background:hsl(200, 80%, 30%);
+}
+
+.item-e{
+  background:hsl(200, 80%, 40%);
+}
+
+.item-f{
+  background:hsl(200, 80%, 50%);
+}
+
+.item-g{
+  background:hsl(100, 80%, 30%);
+}
+
+.item-h{
+  background:hsl(100, 80%, 40%);
+}
+
+.item-i{
+  background:hsl(100, 80%, 50%);
+}
+

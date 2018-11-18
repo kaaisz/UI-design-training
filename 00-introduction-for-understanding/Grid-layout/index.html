@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>CSS Grid Layout</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+</head>
+<body>
+  <main>
+    <h2>Grid layout</h2>
+    <ul>
+      <li>When element has been specified as display:grid, child element will change to grid item.</li>
+      <li>Grand child won't be changed in display:grid. only child parent will change.</li>
+      <li>Each Item are called as "cells"</li>
+    </ul>
+    <!-- each items should be surrounded by grid container (display:grid) -->
+    <h3>Grid Layout A</h3>
+    <div class="grid-container grA">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <h3>Grid Layout B</h3>
+    <div class="grid-container grB">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <h3>Grid Layout C(specified percentage - 50% 100px 100px)</h3>
+    <div class="grid-container grC">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <h3>Grid Layout D(fraction - 余った高さや幅を比率に応じて配分できる)</h3>
+    <div class="grid-container grD">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <h3>Grid Layout E(gap - add margin between each of grids)</h3>
+    <div class="grid-container grE">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+
+    <h3>Expand cells</h3>
+    <div class="grid-container grA free">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <p>you can expand cell which you specified like an example above.</p>
+
+    <h3>Making area and assign cells</h3>
+    <div class="grid-container grA area">
+      <!-- cells -->
+      <div class="item-a area">A</div>
+      <div class="item-b area">B</div>
+      <div class="item-c area">C</div>
+      <div class="item-d area">D</div>
+      <!-- <div class="item-e area">E</div>
+      <div class="item-f area">F</div>
+      <div class="item-g area">G</div>
+      <div class="item-h area">H</div>
+      <div class="item-i area">I</div> -->
+    </div>
+    <p>If you'll put dot on the names for grid-areas, nothing will be shown.</p>
+    <div class="grid-container grA area dot">
+      <!-- cells -->
+      <div class="item-a area">A</div>
+      <div class="item-b area">B</div>
+      <div class="item-c area">C</div>
+      <div class="item-d area">D</div>
+      <!-- <div class="item-e area">E</div>
+        <div class="item-f area">F</div>
+        <div class="item-g area">G</div>
+        <div class="item-h area">H</div>
+        <div class="item-i area">I</div> -->
+    </div>
+    <p>in case of you want be shorten for write grid layout</p>
+    <div class="grid-container grA area shorten">
+      <!-- cells -->
+      <div class="item-a area">A</div>
+      <div class="item-b area">B</div>
+      <div class="item-c area">C</div>
+      <div class="item-d area">D</div>
+      <!-- <div class="item-e area">E</div>
+          <div class="item-f area">F</div>
+          <div class="item-g area">G</div>
+          <div class="item-h area">H</div>
+          <div class="item-i area">I</div> -->
+    </div>
+    <h3>Making area and assign cells</h3>
+    <div class="grid-container grA area">
+      <!-- cells -->
+      <div class="item-a area">A</div>
+      <div class="item-b area">B</div>
+      <div class="item-c area">C</div>
+      <div class="item-d area">D</div>
+      <!-- <div class="item-e area">E</div>
+        <div class="item-f area">F</div>
+        <div class="item-g area">G</div>
+        <div class="item-h area">H</div>
+        <div class="item-i area">I</div> -->
+    </div>
+    <h3>How to change cell size</h3>
+    <div class="grid-container grA size">
+      <!-- cells -->
+      <div class="item-a size">A</div>
+      <div class="item-b size">B</div>
+      <div class="item-c size">C</div>
+      <div class="item-d size">D</div>
+      <div class="item-e area">E</div>
+      <div class="item-f area">F</div>
+      <div class="item-g area">G</div>
+      <div class="item-h area">H</div>
+      <div class="item-i area">I</div>
+    </div>
+    <p>grid-auto-flow:dense で要素が横に並ぶ。語尾に「column」をつけると要素は縦に並ぶ</p>
+    <div class="grid-container grA size col">
+      <!-- cells -->
+      <div class="item-a size">A</div>
+      <div class="item-b size">B</div>
+      <div class="item-c size">C</div>
+      <div class="item-d size">D</div>
+      <div class="item-e area">E</div>
+      <div class="item-f area">F</div>
+      <div class="item-g area">G</div>
+      <div class="item-h area">H</div>
+      <div class="item-i area">I</div>
+    </div>
+
+    <h3>align and justify grid</h3>
+    <div class="grid-container grA align">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <p>セル内のどこかに要素を寄せる場合 - align/justify-itemsを使用<br>
+    特定のセルのみをどこかに寄せる場合は、align/justify-cellsを使用</p>
+    <div class="grid-container grA align-cell">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+      <div class="item-e">E</div>
+      <div class="item-f">F</div>
+      <div class="item-g">G</div>
+      <div class="item-h">H</div>
+      <div class="item-i">I</div>
+    </div>
+    <h3>responsive layout</h3>
+    <div class="grid-container grA res">
+      <!-- cells -->
+      <div class="item-a">A</div>
+      <div class="item-b">B</div>
+      <div class="item-c">C</div>
+      <div class="item-d">D</div>
+    </div>
+  <main>
+</body>
+</html>
