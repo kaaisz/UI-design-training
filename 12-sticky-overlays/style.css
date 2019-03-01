@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css?family=Amiri');
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: 'Amiri', serif;
+  font-weight: 100;
+  font-size: .85rem;
+  line-height: 1.25;
+
+  background: rgb(255, 252, 237) url('szdplogo.svg') no-repeat;
+  background-position: center;
+  background-size: 25% auto;
+  background-attachment: fixed;
+  color: #fff;
+
+  margin: 101vh auto;
+  width: 1000px;
+}
+
+section {
+  margin: 100px 0;
+  position: relative;
+  /* overflow: hidden; */
+}
+
+section img {
+  filter: blur(2px);
+  -weblit-filter: blur(2px);
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(77, 77, 77, 40%);
+}
+
+section h2 {
+  padding: 40px;
+  font-weight: lighter;
+
+  /* stick text while img is appeared */
+  position: sticky;
+  position: -webkit-sticky;
+  top: 45vh;
+}
