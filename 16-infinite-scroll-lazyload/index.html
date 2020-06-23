@@ -87,18 +87,44 @@
             const observer = new IntersectionObserver(handleIntersect, options);
             // check if the footer is observed
             observer.observe(document.querySelector("footer"));
+            // load initial amount of data
+            getData();
         });
 
         function handleIntersect(entries) {
             // if the footer is intersecting, show console.warn
             if(entries[0].isIntersecting) {
                 console.warn("something is intersecting with the viewport");
+                // call fetch code
+                getData();
             }
         }
 
         function getData() {
-            let main = doucment.querySelector("main");
+            let main = document.querySelector("main");
             console.log('fetch some JSON data');
+            fetch(URL)
+            .then(res => res.json()) // extract json data
+            .then(data => { //image ofject as data
+                // loop data.items[].img, and data.items[].name while data is there
+                data.items.forEach(item => {
+                    let figure = document.createElement('figure');
+                    let figcaption = document.createElement('figucaption');
+                    let img = document.createElement('img');
+
+                    // insert data into each attributes
+                    img.src = item.img;
+                    img.alt = item.name;
+                    figcaption.textContent = item.name;
+
+                    // insert data into each elements created
+                    figure.appendChild(img);
+                    figure.appendChild(figcaption);
+
+                    // lastly insert all the data into main element
+                    main.appendChild(figure);
+                });
+            });
         }
     </script>
 </body>
