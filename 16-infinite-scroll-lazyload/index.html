@@ -13,6 +13,7 @@
         }
         body {
             /* padding-bottom: 200px; */
+            margin: 0;
         }
         header {
             margin: 1rem 3rem 3rem 3rem;
@@ -70,5 +71,35 @@
     <footer>
         <p>&copy; SZDP Kaai Suzuki</p>
     </footer>
+    <script>
+        const URL = "https://gist.githubusercontent.com/prof3ssorSt3v3/1944e7ba7ffb62fe771c51764f7977a4/raw/c58a342ab149fbbb9bb19c94e278d64702833270/infinite.json";
+
+        document.addEventListener("DOMContentLoaded", () => {
+            let options = {
+                root: null, // DOM which wants to specify as root
+                rootMargins: "0px",
+                // where wants to trigger - identify with the same as css margin. 
+                // this is no margin = looking at the entire viewport
+                threshold: 0.5 // trigger timing - 0.5 = 50% = if 50% of footer is showing up
+            };
+
+            // init observer
+            const observer = new IntersectionObserver(handleIntersect, options);
+            // check if the footer is observed
+            observer.observe(document.querySelector("footer"));
+        });
+
+        function handleIntersect(entries) {
+            // if the footer is intersecting, show console.warn
+            if(entries[0].isIntersecting) {
+                console.warn("something is intersecting with the viewport");
+            }
+        }
+
+        function getData() {
+            let main = doucment.querySelector("main");
+            console.log('fetch some JSON data');
+        }
+    </script>
 </body>
 </html>
